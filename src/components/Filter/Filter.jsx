@@ -1,15 +1,16 @@
 import {LabelFind, ImputFind, Wrap} from './Filter.styled';
 import PropTypes from 'prop-types';
 
-const Filter = ({onChangeFilter}) => {
+const Filter = ({onChangeFilter, value}) => {
     const handleChange = ({target: {value}}) => {
-        onChangeFilter(value)
+        onChangeFilter(value);
     }
     return (
     <Wrap>
       <LabelFind>Find contacts by name</LabelFind>
       <ImputFind 
-           type="text" 
+           type="text"
+           value={value} 
            onChange={handleChange}
            />
     </Wrap>
